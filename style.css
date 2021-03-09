@@ -79,6 +79,35 @@ body {
     transition: all ease-in 0.3s;
 }
 
+.content .author {
+    font-size: 0.9rem;
+    margin-top: 15px;
+    color: #cccccc;
+}
+
+.card .content p:before {
+    position: absolute;
+    content: "";
+    width: 30px;
+    height: 30px;
+    background: url('left-quote.svg') no-repeat;
+    left: 0;
+    background-size: 100% 100%;
+    top: -40px;
+    z-index: 55;
+}
+
+.card .content p:after {
+    position: absolute;
+    content: "";
+    width: 30px;
+    height: 30px;
+    background: url("right-quote-sign.svg") no-repeat;
+    background-size: 100% 100%;
+    right: 15px;
+    bottom: 0;
+}
+
 .card:hover .content {
     z-index: 1;
     opacity: 1;
@@ -92,7 +121,7 @@ body {
     }
 
     .card:hover {
-        height: 400px;
+        height: 550px;
     }
 
     .card img {
@@ -100,14 +129,19 @@ body {
     }
 
     .card:hover img {
-        transform: translate(0 , 50%) scale(1.2);
+        transform: translate(0 , 60%) scale(1.2);
     }
 
     .card .content {
-        top: 0;
+        top: 10%;
         left: 0;
         width: 100%;
         padding: 20px;
         text-align: left;
+    }
+
+    .card .content p:before {
+        left: 20px;
+        top: -20px;
     }
 }
