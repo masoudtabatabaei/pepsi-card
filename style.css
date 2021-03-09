@@ -18,7 +18,7 @@ body {
     position: relative;
     width: 650px;
     height: 350px;
-    /*background-color: #eeeeee;*/
+    margin: 0 5px;
     border-radius: 20px;
     display: flex;
     align-items: center;
@@ -47,11 +47,12 @@ body {
     transform: translate(0 , 0);
     background-color: #d83133;
     clip-path: circle(120px at center);
-    transition: 0.5s;
+    transition: 0.4s;
 }
 
 .card:hover .circle:before {
     clip-path: circle(400px at center);
+    background-color: #1c487f;
 }
 
 .card img {
@@ -65,4 +66,48 @@ body {
 
 .card:hover img {
     transform: translate(50% , 0)  scale(1.2);
+}
+
+.card .content {
+    position: absolute;
+    left: 8%;
+    width: 40%;
+    opacity: 0;
+    visibility: hidden;
+    color: white;
+    font-size: 1.3rem;
+    transition: all ease-in 0.3s;
+}
+
+.card:hover .content {
+    z-index: 1;
+    opacity: 1;
+    visibility: visible;
+}
+
+@media screen and (max-width: 600px){
+    .card {
+        max-width: 340px;
+        margin-top: -40px;
+    }
+
+    .card:hover {
+        height: 400px;
+    }
+
+    .card img {
+        max-width: 210px;
+    }
+
+    .card:hover img {
+        transform: translate(0 , 50%) scale(1.2);
+    }
+
+    .card .content {
+        top: 0;
+        left: 0;
+        width: 100%;
+        padding: 20px;
+        text-align: left;
+    }
 }
